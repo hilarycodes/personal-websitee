@@ -1,39 +1,51 @@
 <!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="author" content="Modilim Hilary">
-    <meta name="keywords" content="Hilary, Chukwubuikem">
-    <title>Hilary's personal website</title>   
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"/>
-    <link rel="stylesheet" href="homestyles.css"> 
-</head>
-<body>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Modilim Hilary" />
+    <meta name="keywords" content="Hilary, Chukwubuikem" />
+    <title>Hilary's personal website</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <link rel="stylesheet" href="homestyles.css" />
+  </head>
+  <body>
     <div class="card">
-        <div class="card-container">
-            <div class="card-face front-face">
-                <img src="Me.jpeg" alt="Profile Picture" /> 
-                <h2 class="name">Modilim Chukwubuikem Hilary🦉</h2>
-                <h3>AI Developer</h3>
-            </div>
-            <div class="card-face back-face">
-                <div class="container-about">
-                    <h2 class="about-me-title">About me</h2>
-                    <p class="text">
-                        I am an 18 year old programmer and I love skateboarding
-                        <br>Spread Love!!!
-                    </p>
-                    <div class="row">
-                        <a href="https://www.instagram.com/fdontcaree/?hl=en" target="_blank"><i class="bi ig bi-instagram"></i></a>
-                        <a href="https://github.com/hilarycodes" target="_blank"><i class="bi git bi-github"></i></a>
-                    </div>
-                </div>
-            </div>
+      <div class="card-container">
+        <div class="card-face front-face">
+          <img src="Me.jpeg" alt="Profile Picture" />
+          <h2 class="name">Modilim Chukwubuikem Hilary🦉</h2>
+          <h3>AI Developer</h3>
         </div>
+        <div class="card-face back-face">
+          <div class="container-about">
+            <h2 class="about-me-title">About me</h2>
+            <p class="text">
+              I am an 18 year old programmer and I love skateboarding
+              <br />
+              Spread Love!!!
+            </p>
+            <div class="row">
+                <button class="instagram-button" onclick="redirectToAnotherPage()">
+                  instagram
+                </button>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     <blockquote cite="https://www.fast.com">
-        It might sound cliche but, never give up on your dreams!!!
+      It might sound cliche but, never give up on your dreams!!!
     </blockquote>
-</body>
+    <script>
+      function redirectToAnotherPage()
+      {
+        alert('You are about to leave this window');
+        window.location.href= "https://www.instagram.com/fdontcaree";
+      }
+    </script>
+  </body>
 </html>
