@@ -7,7 +7,7 @@ body
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: rgb(180, 106, 3);
+  background-color: rgb(244, 245, 245);
 }
 .name
 {
@@ -52,7 +52,7 @@ h3
     transform-style: preserve-3d;
     transition-duration: 10s;
     transition: transform 2.5s;
-    box-shadow: 0 10px 10px 0 rgba(6, 0, 0, 0.2);
+    box-shadow: 0 0 10px 10px rgba(6, 0, 0, 0.2);
     border-radius: 20px;
 }
 .card:hover .card-container
@@ -71,7 +71,7 @@ h3
     flex-direction: column;
     border: 1px solid #c3c3c3;
     border-radius: 10px; 
-    background: linear-gradient(180deg, white, rgb(48, 176, 255));
+    background: whitesmoke;
 }
 .container-about
 {
@@ -137,7 +137,7 @@ h3
     padding: 0;
     color: blue;
 }
-blockquote
+.my-quote
 {
     margin-top: auto;
     margin-bottom: 50px;
@@ -145,7 +145,7 @@ blockquote
     margin-right: 10px;
     font-weight: 600;
     font-family: Tahoma;
-    color: red;
+    color: rgb(1, 1, 1)
 }
 .text
 {
