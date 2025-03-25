@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Calculator.css">
+    <script src="Calculator.js"></script>
     <title>Calculator App</title>
 </head>
 <body>
@@ -10,26 +12,11 @@
         <div class="calculator-display">
             <input type="text" id="display" disabled>
         </div>
-        <div class="calculator-buttons">
-            <button onclick="clearDisplay()">C</button>
-            <button onclick="deleteLast()">DEL</button>
-            <button onclick="appendNumber('7')">7</button>
-            <button onclick="appendNumber('8')">8</button>
-            <button onclick="appendNumber('9')">9</button>
-            <button onclick="appendOperator('/')">/</button>
-            <button onclick="appendNumber('4')">4</button>
-            <button onclick="appendNumber('5')">5</button>
-            <button onclick="appendNumber('6')">6</button>
-            <button onclick="appendOperator('*')">*</button>
-            <button onclick="appendNumber('1')">1</button>
-            <button onclick="appendNumber('2')">2</button>
-            <button onclick="appendNumber('3')">3</button>
-            <button onclick="appendOperator('-')">-</button>
-            <button onclick="appendNumber('0')">0</button>
-            <button onclick="appendNumber('.')">.</button>
-            <button onclick="calculate()">=</button>
-            <button onclick="appendOperator('+')">+</button>
-        </div>
+            <div class="top-row">
+                <button onclick="clearDisplay()" class="C-button" id="calc-buttons">C</button>
+                <button onclick="deleteLast()" class="DEL-button" id="calc-buttons">DEL</button>
+                <button onclick="appendNumber('9')" class="nine-button" id="calc-buttons">9</button>
+            </div>
     </div>
 </body>
 </html>
