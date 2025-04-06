@@ -14,7 +14,7 @@ for (let i = 0; i < cities.length; i++) {
 cities[cities.length - 1] = "Mexico City";
 console.log(cities);
 
-for (let i = 0; i < cities.length; i++) {
+/*for (let i = 0; i < cities.length; i++) {
   console.log(cities[i]);
-}
+}*/
 

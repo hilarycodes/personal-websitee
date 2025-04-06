@@ -1,54 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="author" content="Modilim Hilary" />
-    <meta name="keywords" content="Hilary, Chukwubuikem" />
-    <title>Hilary's personal website</title>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
-    />
-    <link rel="stylesheet" href="homestyles.css" />
-    <script src="script.js"></script>
-  </head>
-  <body>
-    <div class="card">
-      <div class="card-container">
-        <div class="card-face front-face">
-          <img src="Me.jpeg" alt="Profile Picture" onclick="alert('Hello Guys')"/>
-          <h2 class="name">Modilim Chukwubuikem Hilary🦉</h2>
-          <h3>AI Developer</h3>
-        </div>
-        <div class="card-face back-face">
-          <div class="container-about">
-            <h2 class="about-me-title">About me</h2>
-            <p class="text">
-              I am an 18 year old programmer and I love skateboarding
-              <br />
-              Spread Love!!!
-            </p>
-            <div class="row">
-                <button class="instagram-button" onclick="redirectToAnotherPage()">
-                  instagram
-                </button>
-            </div>
-          </div>
-        </div>
-      </div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Modilim Chukwubuikem Hilary">
+    <meta name="og:description" content="Welcome to my personal website. I'm a passionate Computer Science student and aspiring AI expert building tools to solve real-world problems.">
+    <title>Personal Website</title>
+    <link rel="stylesheet" href="homestyles.css">
+    <script src="hompage.js" defer></script>
+</head>
+<body>
+    <img src="IMG-20240314-WA0421.jpg" alt="Profile Picture">
+    <div class="column">
+      <span id="header">Chukwubuikem Hilary Modilim,</span>
+      <span id="Age">18</span>
+      <span id="sub-header">Abuja, Nigeria.</span>
+      <span id="description">Computer Science Stuent/Front-end Web developer</span>
+      <span id="About-me">I am an 18 year old programmer who loves to code</span>
     </div>
-    <div>
-
-    <blockquote cite="https://www.fast.com" class="my-quote">
-      It might sound cliche but, never give up on your dreams!!!
-    </blockquote>
-    
+    <div class="column">
+        <a class="link" id="instagram-button" href="https://instagram.com/thisishilary_">Instagram</a>
+        <a class="link" href="https://github.com/hilarycodes">Github</a>
+        <a class="linked" href="2index.html"></a>
     </div>
-    <div>
-      <hr>
-      <h2>My Projects</h2>
-      <button class="projects-btn" onclick="redirectToEcommercePage()">E-commerce Website</button>
-    </div>
-  </body>
+    <h6>click on the arrow to move to the next page</h6>
+</body>
 </html>
