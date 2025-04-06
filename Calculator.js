@@ -14,3 +14,11 @@ console.log(variable1);
 variable1 += 1;
 console.log(variable1);
 
+if (false)
+{
+    console.log('hello');
+}
+else
+{
+    console.log('world');
+}
