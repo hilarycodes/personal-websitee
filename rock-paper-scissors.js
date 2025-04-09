@@ -1,7 +1,10 @@
-function appendRock()
+let computerMove = '';
+let result = '';
+
+function generateComputerMove()
 {
-    let computerMove = '';
     let randomNumberForComputerMove = Math.random();
+    
     if(randomNumberForComputerMove >= 0 && randomNumberForComputerMove < (1/3))
     {
         computerMove = "rock";
@@ -14,43 +17,83 @@ function appendRock()
     {
         computerMove = "scissors";
     }
-    console.log(computerMove);
+    console.log(computerMove);    
+}
+
+function appendRock()
+{   
+    let btn = document.getElementById("rock-button");
+    let buttonName = btn.getAttribute("name");
+    
+    generateComputerMove();
+
+    if(computerMove === 'rock')
+    {
+        result = 'tie';
+        alert(`You played ${buttonName} and the computer played ${computerMove}. It's a tie!`); // alert for tie
+    }
+    else if(computerMove === 'paper')
+    {
+        result = 'loss';
+        alert(`You played ${buttonName} and the computer played ${computerMove}. You lose!`); // alert for loss
+    }
+    else if(computerMove === 'scissors')
+    {
+        result = 'win';
+        alert(`You played ${buttonName} and the computer played ${computerMove}. You win!`); // alert for win
+    }
+    console.log(result);
 }
 
 function appendPaper()
 {
-    let computerMove = '';
-    let randomNumberForComputerMove = Math.random();
-    if(randomNumberForComputerMove >= 0 && randomNumberForComputerMove < (1/3))
+    let btn = document.getElementById("paper-button");
+    let buttonName = btn.getAttribute("name");
+
+    generateComputerMove();
+
+    if(computerMove === 'rock')
     {
-        computerMove = "rock";
+        result = 'win';
+        alert(`You played ${buttonName} and the computer played ${computerMove}. You win!`); // alert for win
     }
-    else if(randomNumberForComputerMove >= (1/3) && randomNumberForComputerMove < (2/3))
+    else if(computerMove === 'paper')
     {
-        computerMove = "paper";
+        result = 'tie';
+        alert(`You played ${buttonName} and the computer played ${computerMove}. It's a tie!`); // alert for tie
     }
-    else if(randomNumberForComputerMove >= (2/3) && randomNumberForComputerMove <= 1)
+    else if(computerMove === 'scissors')
     {
-        computerMove = "scissors";
+        result = 'loss';
+        alert(`You played ${buttonName} and the computer played ${computerMove}. You lose!`); // alert for loss
     }
-    console.log(computerMove);
+    console.log(result);
+    const paperButton = document.getElementById('paper-button');
+    paperButton.innerHTML = 'Paper <span class="icon">📄</span>';
 }
 
 function appendScissors()
 {
-    let computerMove = '';
-    let randomNumberForComputerMove = Math.random();
-    if(randomNumberForComputerMove >= 0 && randomNumberForComputerMove < (1/3))
+    let btn = document.getElementById("rock-button");
+    let buttonName = btn.getAttribute("name");
+
+    generateComputerMove();
+    if(computerMove === 'rock')
     {
-        computerMove = "rock";
+        result = 'loss';
+        alert(`You played ${buttonName} and the computer played ${computerMove}. You lose!`); // alert for loss
     }
-    else if(randomNumberForComputerMove >= (1/3) && randomNumberForComputerMove < (2/3))
+    else if(computerMove === 'paper')
     {
-        computerMove = "paper";
+        result = 'win';
+        alert(`You played ${buttonName} and the computer played ${computerMove}. You win!`); // alert for win
     }
-    else if(randomNumberForComputerMove >= (2/3) && randomNumberForComputerMove <= 1)
+    else if(computerMove === 'scissors')
     {
-        computerMove = "scissors";
+        result = 'tie';
+        alert(`You played ${buttonName} and the computer played ${computerMove}. It's a tie!`); // alert for tie
     }
-    console.log(computerMove);
+    console.log(result);
+    const scissorsButton = document.getElementById('scissors-button');
+    scissorsButton.innerHTML = 'Scissors <span class="icon">✂️</span>';
 }
