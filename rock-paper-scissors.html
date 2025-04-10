@@ -10,10 +10,18 @@
     </head>
     <body>
         <div id="game-title">
-            <p>Rock Paper Scissors Game</p>
+            <h1>Quartz Parchment Shears</h1>
         </div>
-        <a id="rock-button" name="rock" onclick="appendRock()">Rock 🪨</a>
-        <button id="paper-button" name="paper" onclick="appendPaper()">Paper📄</button>
-        <button id="scissors-button" name="scissors" onclick="appendScissors()">Scissors ✂️</button>
+        <div id="game-buttons">
+            <button class="move-button" id="rock-button" name="rock" onclick="appendRock() , updateScore()">Rock 🪨</button>
+            <button class="move-button" id="paper-button" name="paper" onclick="appendPaper()">Paper📄</button>
+            <button class="move-button" id="scissors-button" name="scissors" onclick="appendScissors()">Scissors ✂️</button>
+        </div>
+        <div>
+            <h2 id="scores-heading">Scores</h2>
+            <hr>
+            <h3 id="player-score-header">Player Score</h3><h3 id="Computer-score-header">Computer Score</h3>
+            <p id="player-scores"></p><p id="computer-scores"></p>
+        </div>
     </body>
 </html>
