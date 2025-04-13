@@ -3,6 +3,8 @@ let result = '';
 let playerScore = 0;
 let computerScore = 0;
 
+document.onload = updateScore();
+
 function generateComputerMove()
 {
     let randomNumberForComputerMove = Math.random();
@@ -38,8 +40,8 @@ function appendRock()
     else if(computerMove === 'paper')
     {
         result = 'loss';
-        alert(`You played ${buttonName} and the computer played ${computerMove}. You lose!`); // alert for loss
         updateScore('loss');
+        alert(`You played ${buttonName} and the computer played ${computerMove}. You lose!`); // alert for loss
     }
     else if(computerMove === 'scissors')
     {
@@ -60,8 +62,8 @@ function appendPaper()
     if(computerMove === 'rock')
     {
         result = 'win';
-        alert(`You played ${buttonName} and the computer played ${computerMove}. You win!`); // alert for win
         updateScore('win');
+        alert(`You played ${buttonName} and the computer played ${computerMove}. You win!`); // alert for win
     }
     else if(computerMove === 'paper')
     {
@@ -89,14 +91,14 @@ function appendScissors()
     if(computerMove === 'rock')
     {
         result = 'loss';
-        alert(`You played ${buttonName} and the computer played ${computerMove}. You lose!`); // alert for loss
         updateScore('loss');
+        alert(`You played ${buttonName} and the computer played ${computerMove}. You lose!`); // alert for loss
     }
     else if(computerMove === 'paper')
     {
         result = 'win';
-        alert(`You played ${buttonName} and the computer played ${computerMove}. You win!`); // alert for win
         updateScore('win');
+        alert(`You played ${buttonName} and the computer played ${computerMove}. You win!`); // alert for win
     }
     else if(computerMove === 'scissors')
     {
@@ -118,3 +120,8 @@ function updateScore(result)
     document.getElementById('player-scores').innerText = `${playerScore}`;
     document.getElementById('computer-scores').innerText = `${computerScore}`;
 } 
+
+function redirectToVideo()
+{
+    window.location.href = "https://www.youtube.com/watch?v=Mu79PNuINs8";
+}

@@ -80,13 +80,14 @@ h6{
     font-style: italic;
     font-weight: 200;
 }
-.About-me{
+
+p{
     font-size: 100;
-    font-weight: 300;
+    font-weight: 350;
 }
-.About-me-line-two
+
+#about-me-line-two
 {
-    font-size: 100;
-    font-weight: 300;
-    margin: 0, 0, 0, 40px;
+    margin-left: 35px;
+    margin-right: 35px;
 }

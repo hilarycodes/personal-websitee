@@ -1,13 +1,17 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\USER\\Desktop\\127.0.0.1\\",
+  "WorkspaceRootPath": "C:\\Users\\USER\\Desktop\\p-stuff\\Coding Projects\\127.0.0.1\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\USER\\Desktop\\127.0.0.1\\homepage.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:homepage.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\USER\\Desktop\\p-stuff\\Coding Projects\\127.0.0.1\\homestyles.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:homestyles.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\USER\\Desktop\\127.0.0.1\\Calculator.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\USER\\Desktop\\p-stuff\\Coding Projects\\127.0.0.1\\hompage.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:hompage.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\USER\\Desktop\\p-stuff\\Coding Projects\\127.0.0.1\\Calculator.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Calculator.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     }
   ],
@@ -33,28 +37,40 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "homepage.html",
-              "DocumentMoniker": "C:\\Users\\USER\\Desktop\\127.0.0.1\\homepage.html",
-              "RelativeDocumentMoniker": "homepage.html",
-              "ToolTip": "C:\\Users\\USER\\Desktop\\127.0.0.1\\homepage.html",
-              "RelativeToolTip": "homepage.html",
+              "Title": "homestyles.css",
+              "DocumentMoniker": "C:\\Users\\USER\\Desktop\\p-stuff\\Coding Projects\\127.0.0.1\\homestyles.css",
+              "RelativeDocumentMoniker": "homestyles.css",
+              "ToolTip": "C:\\Users\\USER\\Desktop\\p-stuff\\Coding Projects\\127.0.0.1\\homestyles.css",
+              "RelativeToolTip": "homestyles.css",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2025-04-07T05:30:24.826Z",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-04-11T01:14:36.579Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "hompage.js",
+              "DocumentMoniker": "C:\\Users\\USER\\Desktop\\p-stuff\\Coding Projects\\127.0.0.1\\hompage.js",
+              "RelativeDocumentMoniker": "hompage.js",
+              "ToolTip": "C:\\Users\\USER\\Desktop\\p-stuff\\Coding Projects\\127.0.0.1\\hompage.js",
+              "RelativeToolTip": "hompage.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAswAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-04-11T01:14:27.41Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "Calculator.js",
-              "DocumentMoniker": "C:\\Users\\USER\\Desktop\\127.0.0.1\\Calculator.js",
+              "DocumentMoniker": "C:\\Users\\USER\\Desktop\\p-stuff\\Coding Projects\\127.0.0.1\\Calculator.js",
               "RelativeDocumentMoniker": "Calculator.js",
-              "ToolTip": "C:\\Users\\USER\\Desktop\\127.0.0.1\\Calculator.js",
+              "ToolTip": "C:\\Users\\USER\\Desktop\\p-stuff\\Coding Projects\\127.0.0.1\\Calculator.js",
               "RelativeToolTip": "Calculator.js",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2025-04-07T05:30:07.272Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-07T05:30:07.272Z"
             },
             {
               "$type": "Bookmark",
