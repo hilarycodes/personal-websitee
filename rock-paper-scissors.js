@@ -1,5 +1,6 @@
 let computerMove = '';
 let result = '';
+let move = '';
 let playerScore = 0;
 let computerScore = 0;
 
@@ -21,99 +22,71 @@ function generateComputerMove()
     {
         computerMove = "scissors";
     }
-    console.log(computerMove);    
+    console.log(computerMove);
+    return computerMove;    
 }
 
-function appendRock()
+function playerMove(move)
 {   
-    let btn = document.getElementById("rock-button");
-    let buttonName = btn.getAttribute("name");
-    
     generateComputerMove();
 
-    if(computerMove === 'rock')
+    if(computerMove === 'rock' && move === 'rock')
     {
         result = 'tie';
-        alert(`You played ${buttonName} and the computer played ${computerMove}. It's a tie!`); // alert for tie
-        //updateScore();
+        updateScore('tie')
+        alert(`You played ${move} and the computer played ${computerMove}. It's a tie!`); // alert for tie
     }
-    else if(computerMove === 'paper')
+    else if(computerMove === 'rock' && move === 'paper')
+    {
+        updateScore('win')
+        alert(`You played ${move} and the computer played ${computerMove}. You win!`);
+    }
+    else if(computerMove === 'rock' && move === 'scissors')
+    {
+        updateScore('loss')
+        alert(`You played ${move} and the computer played ${computerMove}. You lose!`);
+    }
+    else if(computerMove === 'paper' && move === 'rock')
     {
         result = 'loss';
         updateScore('loss');
-        alert(`You played ${buttonName} and the computer played ${computerMove}. You lose!`); // alert for loss
+        alert(`You played ${move} and the computer played ${computerMove}. You lose!`); // alert for loss
     }
-    else if(computerMove === 'scissors')
+    else if(computerMove === 'paper' && move === 'paper')
     {
-        result = 'win';
-        alert(`You played ${buttonName} and the computer played ${computerMove}. You win!`); // alert for win
-        updateScore('win');
+        updateScore('tie')
+        alert(`You played ${move} and the computer played ${computerMove}. It's a tie!`);
     }
-    console.log(result);
-}
-
-function appendPaper()
-{
-    let btn = document.getElementById("paper-button");
-    let buttonName = btn.getAttribute("name");
-
-    generateComputerMove();
-
-    if(computerMove === 'rock')
+    else if(computerMove === 'paper' && move === 'scissors')
+    {
+        updateScore('win')
+        alert(`You played ${move} and the computer played ${computerMove}. You win!`);
+    }
+    else if(computerMove === 'scissors' && move === 'rock')
     {
         result = 'win';
         updateScore('win');
-        alert(`You played ${buttonName} and the computer played ${computerMove}. You win!`); // alert for win
+        alert(`You played ${move} and the computer played ${computerMove}. You win!`); // alert for win
     }
-    else if(computerMove === 'paper')
+    else if(computerMove === 'scissors' && move === 'paper')
     {
-        result = 'tie';
-        alert(`You played ${buttonName} and the computer played ${computerMove}. It's a tie!`); // alert for tie
-        //updateScore();
+        updateScore('loss')
+        alert(`You played ${move} and the computer played ${computerMove}. You lose!`);
     }
-    else if(computerMove === 'scissors')
+    else if(computerMove === 'scissors' && move === 'scissors')
     {
-        result = 'loss';
-        alert(`You played ${buttonName} and the computer played ${computerMove}. You lose!`); // alert for loss
-        updateScore('loss');
+        updateScore('tie')
+        alert(`You played ${move} and the computer played ${computerMove}. It's a tie!`);
     }
     console.log(result);
-    const paperButton = document.getElementById('paper-button');
-    paperButton.innerHTML = 'Paper <span class="icon">📄</span>';
-}
-
-function appendScissors()
-{
-    let btn = document.getElementById("rock-button");
-    let buttonName = btn.getAttribute("name");
-
-    generateComputerMove();
-    if(computerMove === 'rock')
-    {
-        result = 'loss';
-        updateScore('loss');
-        alert(`You played ${buttonName} and the computer played ${computerMove}. You lose!`); // alert for loss
-    }
-    else if(computerMove === 'paper')
-    {
-        result = 'win';
-        updateScore('win');
-        alert(`You played ${buttonName} and the computer played ${computerMove}. You win!`); // alert for win
-    }
-    else if(computerMove === 'scissors')
-    {
-        result = 'tie';
-        alert(`You played ${buttonName} and the computer played ${computerMove}. It's a tie!`); // alert for tie
-        //updateScore();
-    }
-    console.log(result);
-    const scissorsButton = document.getElementById('scissors-button');
-    scissorsButton.innerHTML = 'Scissors <span class="icon">✂️</span>';
+    declareWinner();
 }
 
 function updateScore(result) 
 {
-    if (result === 'win') 
+    if(result === 'tie')
+        playerScore = playerScore;
+    else if (result === 'win') 
         playerScore++;
     else if (result === 'loss')
         computerScore++;
@@ -124,4 +97,24 @@ function updateScore(result)
 function redirectToVideo()
 {
     window.location.href = "https://www.youtube.com/watch?v=Mu79PNuINs8";
+}
+
+function declareWinner()
+{
+    if(playerScore === 5)
+    {
+        resetGame();
+        alert("You are the winner! Congratulations!");
+    }
+    else if(computerScore === 5)
+    {
+        resetGame();
+        alert("The computer is the winner! Better luck next time!");
+    }
+}
+
+function resetGame()
+{
+    playerScore = 0;
+    computerScore = 0;
 }

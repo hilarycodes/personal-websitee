@@ -16,15 +16,17 @@
             <h1 id="game-title">Quartz Parchment Shears</h1>
         </div>
         <div id="game-buttons">
-            <button class="move-button" id="rock-button" name="rock" onclick="appendRock() , updateScore()">Rock 🪨</button>
-            <button class="move-button" id="paper-button" name="paper" onclick="appendPaper()">Paper📄</button>
-            <button class="move-button" id="scissors-button" name="scissors" onclick="appendScissors()">Scissors ✂️</button>
+            <button class="move-button" id="rock-button" name="rock" onclick="playerMove('rock') , updateScore()">Rock 🪨</button>
+            <button class="move-button" id="paper-button" name="paper" onclick="playerMove('paper')">Paper📄</button>
+            <button class="move-button" id="scissors-button" name="scissors" onclick="playerMove('scissors')">Scissors ✂️</button>
         </div>
         <h2 id="scores-heading">Scores</h2>
         <hr>
-        <div id="game-result">
             <h3 id="player-score-header">Player Score</h3><h3 id="Computer-score-header">Computer Score</h3>
             <p id="player-scores"></p><p id="computer-scores"></p>
+        </div>
+        <div>
+            <button class="move-button" id="reset-button" onclick="resetGame()">Reset</button>
         </div>
     </body>
 </html>
