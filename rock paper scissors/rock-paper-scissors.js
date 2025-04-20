@@ -4,7 +4,9 @@ let move = '';
 let playerScore = 0;
 let computerScore = 0;
 
-document.onload = updateScore();
+let playerRecord = JSON.parse(localStorage.getItem('GameHistory')) ||  {wins: 0, losses: 0, draws: 0};
+
+document.onload = updateRecords();
 
 function generateComputerMove()
 {
@@ -32,51 +34,57 @@ function playerMove(move)
 
     if(computerMove === 'rock' && move === 'rock')
     {
-        result = 'tie';
         updateScore('tie')
-        alert(`You played ${move} and the computer played ${computerMove}. It's a tie!`); // alert for tie
+        alert(`You played ${move} and the computer played ${computerMove}. It's a tie!`);
+        updateRecords('tie'); 
     }
     else if(computerMove === 'rock' && move === 'paper')
     {
         updateScore('win')
         alert(`You played ${move} and the computer played ${computerMove}. You win!`);
+        updateRecords('win');
     }
     else if(computerMove === 'rock' && move === 'scissors')
     {
         updateScore('loss')
         alert(`You played ${move} and the computer played ${computerMove}. You lose!`);
+        updateRecords('loss');
     }
     else if(computerMove === 'paper' && move === 'rock')
     {
-        result = 'loss';
         updateScore('loss');
-        alert(`You played ${move} and the computer played ${computerMove}. You lose!`); // alert for loss
+        alert(`You played ${move} and the computer played ${computerMove}. You lose!`); 
+        updateRecords('loss');
     }
     else if(computerMove === 'paper' && move === 'paper')
     {
         updateScore('tie')
         alert(`You played ${move} and the computer played ${computerMove}. It's a tie!`);
+        updateRecords('tie');
     }
     else if(computerMove === 'paper' && move === 'scissors')
     {
         updateScore('win')
         alert(`You played ${move} and the computer played ${computerMove}. You win!`);
+        updateRecords('win');
     }
     else if(computerMove === 'scissors' && move === 'rock')
     {
-        result = 'win';
         updateScore('win');
-        alert(`You played ${move} and the computer played ${computerMove}. You win!`); // alert for win
+        alert(`You played ${move} and the computer played ${computerMove}. You win!`);
+        updateRecords('win'); 
     }
     else if(computerMove === 'scissors' && move === 'paper')
     {
         updateScore('loss')
         alert(`You played ${move} and the computer played ${computerMove}. You lose!`);
+        updateRecords('loss');
     }
     else if(computerMove === 'scissors' && move === 'scissors')
     {
         updateScore('tie')
         alert(`You played ${move} and the computer played ${computerMove}. It's a tie!`);
+        updateRecords('tie');
     }
     console.log(result);
     declareWinner();
@@ -84,15 +92,30 @@ function playerMove(move)
 
 function updateScore(result) 
 {
-    if(result === 'tie')
+    if(result === 'tie'){
         playerScore = playerScore;
-    else if (result === 'win') 
-        playerScore++;
-    else if (result === 'loss')
-        computerScore++;
+        computerScore = computerScore;}
+    else if (result === 'win'){ 
+        playerScore++;}
+    else if (result === 'loss'){
+        computerScore++;}
     document.getElementById('player-scores').innerText = `${playerScore}`;
     document.getElementById('computer-scores').innerText = `${computerScore}`;
-} 
+}
+
+function updateRecords(result) {
+    localStorage.setItem('GameHistory', JSON.stringify(playerRecord));
+    if( result === 'win'){
+        playerRecord.wins += 1;
+    }
+    else if(result === 'loss'){
+        playerRecord.losses += 1;
+    }
+    else if(result === 'tie'){
+        playerRecord.draws += 1;
+    }
+    console.log(playerRecord);
+}
 
 function redirectToVideo()
 {
@@ -117,4 +140,7 @@ function resetGame()
 {
     playerScore = 0;
     computerScore = 0;
+    localStorage.removeItem('GameHistory');
 }
+
+//localStorage.length();
