@@ -1,12 +1,15 @@
 let computerMove = '';
 let result = '';
 let move = '';
+let declaration = '';
 let playerScore = 0;
 let computerScore = 0;
 
 let playerRecord = JSON.parse(localStorage.getItem('GameHistory')) ||  {wins: 0, losses: 0, draws: 0};
 
 document.onload = updateRecords();
+const title = document.getElementById('page-title');
+console.log(title);
 
 function generateComputerMove()
 {
@@ -35,59 +38,73 @@ function playerMove(move)
     if(computerMove === 'rock' && move === 'rock')
     {
         updateScore('tie')
-        alert(`You played ${move} and the computer played ${computerMove}. It's a tie!`);
+        declaration = `It's a tie`;
+        alert(`You played ${move} and the computer played ${computerMove}. ${declaration}`);
         updateRecords('tie'); 
     }
     else if(computerMove === 'rock' && move === 'paper')
     {
         updateScore('win')
-        alert(`You played ${move} and the computer played ${computerMove}. You win!`);
+        declaration = 'You win';
+        alert(`You played ${move} and the computer played ${computerMove}. ${declaration}`);
         updateRecords('win');
     }
     else if(computerMove === 'rock' && move === 'scissors')
     {
         updateScore('loss')
-        alert(`You played ${move} and the computer played ${computerMove}. You lose!`);
+        declaration = 'You lose!';
+        alert(`You played ${move} and the computer played ${computerMove}. ${declaration}`);
         updateRecords('loss');
     }
     else if(computerMove === 'paper' && move === 'rock')
     {
         updateScore('loss');
-        alert(`You played ${move} and the computer played ${computerMove}. You lose!`); 
+        declaration = 'You lose!'
+        alert(`You played ${move} and the computer played ${computerMove}. ${declaration}`); 
         updateRecords('loss');
     }
     else if(computerMove === 'paper' && move === 'paper')
     {
         updateScore('tie')
-        alert(`You played ${move} and the computer played ${computerMove}. It's a tie!`);
+        declaration = `It's a tie`;
+        alert(`You played ${move} and the computer played ${computerMove}. ${declaration}`);
         updateRecords('tie');
     }
     else if(computerMove === 'paper' && move === 'scissors')
     {
         updateScore('win')
-        alert(`You played ${move} and the computer played ${computerMove}. You win!`);
+        declaration = 'You win';
+        alert(`You played ${move} and the computer played ${computerMove}. ${declaration}`);
         updateRecords('win');
     }
     else if(computerMove === 'scissors' && move === 'rock')
     {
         updateScore('win');
-        alert(`You played ${move} and the computer played ${computerMove}. You win!`);
+        declaration = 'You win!';
+        alert(`You played ${move} and the computer played ${computerMove}. ${declaration}`);
         updateRecords('win'); 
     }
     else if(computerMove === 'scissors' && move === 'paper')
     {
         updateScore('loss')
-        alert(`You played ${move} and the computer played ${computerMove}. You lose!`);
+        declaration = 'You lose!';
+        alert(`You played ${move} and the computer played ${computerMove}. ${declaration}`);
         updateRecords('loss');
     }
     else if(computerMove === 'scissors' && move === 'scissors')
     {
         updateScore('tie')
-        alert(`You played ${move} and the computer played ${computerMove}. It's a tie!`);
+        declaration = `It's a tie!`;
+        alert(`You played ${move} and the computer played ${computerMove}. ${declaration}`);
         updateRecords('tie');
     }
     console.log(result);
     declareWinner();
+
+    const gameResults = document.getElementById('game-results');
+    gameResults.innerText = declaration;
+    const gameMoves = document.getElementById('game-moves');
+    gameMoves.innerText = `You = ${move} : Computer = ${computerMove}`;
 }
 
 function updateScore(result) 
@@ -114,6 +131,8 @@ function updateRecords(result) {
     else if(result === 'tie'){
         playerRecord.draws += 1;
     }
+    const gameRecords = document.getElementById('game-records');
+    gameRecords.innerText = `Wins: ${playerRecord.wins} Losses: ${playerRecord.losses} Draws: ${playerRecord.draws}`;
     console.log(playerRecord);
 }
 
@@ -140,7 +159,7 @@ function resetGame()
 {
     playerScore = 0;
     computerScore = 0;
+    //computerMove = move;
     localStorage.removeItem('GameHistory');
 }
 
-//localStorage.length();
