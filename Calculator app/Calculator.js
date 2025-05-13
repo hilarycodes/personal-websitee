@@ -1,24 +1,26 @@
-let person = {
-    name: "John",
-    age: 25
-};
+const input = document.getElementById("display");
 
-person.gender = "Male";
-delete person.age;
-
-console.log(person);  
-
-let variable1 = 5;
-console.log(variable1); 
-
-variable1 += 1;
-console.log(variable1);
-
-if (false)
-{
-    console.log('hello');
+//appends the character within a button onto the display
+function appendNumber(digit){
+    if(digit){
+        console.log(parseInt(digit));
+        input.value += digit;
+    }
 }
-else
-{
-    console.log('world');
+
+function clearDisplay(){
+    input.value = "";
+}
+
+function calculate(){
+    try{
+        input.value = eval(input.value);
+    }
+    catch(error){
+        clearDisplay.value = "Syntax Error";
+    }
+}
+
+function deleteCharacter(){
+    input.value = input.value.slice(0, 1);
 }

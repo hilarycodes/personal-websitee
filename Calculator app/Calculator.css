@@ -1,57 +1,36 @@
 #display
 {
-    height: 40px;
-    width: 300px;
+    height: 60px;
+    width: 450px;
     margin-left: 300px;
     margin-top: 80px;
     margin-bottom: 20px;
     border-radius: 4%;
 }
-/*.calculator-buttons
+.calc-buttons
 {
-}*/
-.C-button
-{
-    margin-left: 570px;
-    margin-right: 40px;
-    height: 40px;
-    width: 40px;
-    background-color: orange;
+    height: 100px;
+    width: 100px;
     padding: 0%;
-    border-radius: 30%;
+    border-radius: 50px;
+    border: none;
+    background-color: rgb(67, 67, 66);
+    color: rgb(201, 187, 187);
     font-family: cursive;
-    font-weight: 900;
-    border-color: black;
+    font-weight: 500;
 }
-.C-button:hover
+
+#row-one, #row-two, #row-three, #row-four, #row-five 
 {
-    background-color: rgb(242, 158, 2);
+    margin-top: 10px;
+    margin-left: 350px;
 }
-.DEL-button
+#C-button, #DEL-button, #percentage-button, #division-button
 {
-    margin-left: -125px;
-    height: 40px;
-    width: 40px;
-    background-color: orange;
-    padding: 0%;
-    border-radius: 30%;
-    font-family: cursive;
-    font-weight: 900;
-    border-color: black;
+    color: rgb(128, 254, 2);
+    background-color: rgb(96, 96, 95);
 }
-.top-row
+#C-button
 {
-    display: flex;
-}
-.nine-button
-{
-    margin-top: 50px;
-    height: 40px;
-    width: 40px;
-    background-color: orange;
-    padding: 0%;
-    border-radius: 30%;
-    font-family: cursive;
-    font-weight: 900;
-    border-color: black;
+    color: rgb(235, 94, 94);
 }

@@ -19,5 +19,15 @@
     <div>
     <button onclick="redirectToHomePage()">Home Page</button>
     </div>
+    <div id="shipping-calculator">
+        <p>Amazon Shipping Calculator</p>
+        <p>Orders under $40 = +$10 shipping</p>
+        <p>Orders over $40 = Free shipping</p>
+        <div>
+            <input type="text" class="order-amount-textbox" placeholder="Enter order amount">
+            <button class="calculate-shipping-btn" onclick="calculateShipping()" onkeydown="calculateOnKeydown()">Calculate</button>
+            <p class="final-shipping-cost"></p>
+        </div>
+    </div>
 </body>
 </html>
