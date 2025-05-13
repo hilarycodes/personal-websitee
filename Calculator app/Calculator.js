@@ -22,5 +22,5 @@ function calculate(){
 }
 
 function deleteCharacter(){
-    input.value = input.value.slice(0, 1);
+    input.value = input.value.slice(0, -1);
 }

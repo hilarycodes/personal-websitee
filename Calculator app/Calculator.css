@@ -1,11 +1,32 @@
+body{
+    background-color: rgb(43, 42, 42);
+}
+.calculator-display
+{
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgb(34, 32, 32);
+    border-radius: 20px;
+    max-width: 500px;
+    overflow: hidden;
+}
+.keys{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 5px;
+    padding: 10px;
+}
+
 #display
 {
     height: 60px;
     width: 450px;
-    margin-left: 300px;
+    margin-left: 20px;
     margin-top: 80px;
     margin-bottom: 20px;
-    border-radius: 4%;
+    border-radius: 20px;
+    background-color: rgb(255, 255, 255);
 }
 .calc-buttons
 {
@@ -17,15 +38,11 @@
     background-color: rgb(67, 67, 66);
     color: rgb(201, 187, 187);
     font-family: cursive;
-    font-weight: 500;
+    font-weight: 900;
+    font-size: 25px;
+    cursor: pointer;
 }
-
-#row-one, #row-two, #row-three, #row-four, #row-five 
-{
-    margin-top: 10px;
-    margin-left: 350px;
-}
-#C-button, #DEL-button, #percentage-button, #division-button
+#C-button, #DEL-button, #percentage-button, #division-button, #addition-button, #subtraction-button, #multiplication-button
 {
     color: rgb(128, 254, 2);
     background-color: rgb(96, 96, 95);
@@ -33,4 +50,9 @@
 #C-button
 {
     color: rgb(235, 94, 94);
+}
+#display{
+    font-family: system-ui, 'Segoe UI', 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 800;
+    font-size: 40px;
 }
