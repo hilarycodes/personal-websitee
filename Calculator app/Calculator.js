@@ -17,10 +17,16 @@ function calculate(){
         input.value = eval(input.value);
     }
     catch(error){
-        clearDisplay.value = "Syntax Error";
+        input.value = "Syntax Error";
     }
 }
 
 function deleteCharacter(){
     input.value = input.value.slice(0, -1);
+}
+
+function calculateResult(){
+    if(calculate()){
+        clearDisplay();
+    }
 }
