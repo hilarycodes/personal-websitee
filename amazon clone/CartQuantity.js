@@ -41,12 +41,21 @@ function calculateShipping(){
         document.querySelector(".final-shipping-cost").innerHTML = `Cost: $${Cost}`;
     }
 }
-document.addEventListener('keydown', function(event) {
-    calculateOnKeydown(event);
-});
+// document.addEventListener('keydown', function(event) {
+//     calculateOnKeydown(event);
+// });
 
 function calculateOnKeydown(event){
     if(event.key === 'Enter'){
         calculateShipping();
     }
+}
+
+function displayMessage(){
+    const inputElementText = document.querySelector('.message-box').value;
+    document.querySelector('.message').innerHTML = `Hello ${inputElementText}, how can I help you today?`; 
+}
+
+function displayText(){
+    document.querySelector('.text').innerHTML = document.querySelector('.text-box').value;
 }

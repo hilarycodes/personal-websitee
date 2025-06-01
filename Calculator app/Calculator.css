@@ -1,5 +1,5 @@
 body{
-    background-color: rgb(43, 42, 42);
+    background-color: rgb(55, 55, 55);
 }
 .calculator-display
 {
@@ -10,37 +10,44 @@ body{
     border-radius: 20px;
     max-width: 500px;
     overflow: hidden;
+    height: 650px;
 }
 .keys{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 5px;
     padding: 10px;
+    margin-left: 30px;
+    margin-right: 20px;
 }
 
 #display
 {
     height: 60px;
-    width: 450px;
-    margin-left: 20px;
-    margin-top: 80px;
+    width: 420px;
+    margin-left: 35px;
+    margin-top: 40px;
     margin-bottom: 20px;
     border-radius: 20px;
     background-color: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 .calc-buttons
 {
-    height: 100px;
-    width: 100px;
+    height: 90px;
+    width: 90px;
     padding: 0%;
     border-radius: 50px;
     border: none;
-    background-color: rgb(67, 67, 66);
+    background-color: rgb(70, 70, 70);
     color: rgb(201, 187, 187);
     font-family: cursive;
     font-weight: 900;
     font-size: 25px;
     cursor: pointer;
+    margin-bottom: 5px;
 }
 #C-button, #DEL-button, #percentage-button, #division-button, #addition-button, #subtraction-button, #multiplication-button
 {
