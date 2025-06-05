@@ -9,24 +9,27 @@
 </head>
 <body>
     <h1>Waybu</h1>
-
+    <div class="cart-information">
         <button id="show-quantity-btn" onclick="showQuantity()">Show Quantity</button>
         <button id="add-to-cart-btn" onclick="addToCart()">Add to Cart</button>
         <button id="add-items-btn" onclick="addTwoItems()">+2</button>
         <button id="add-items-btn" onclick="addThreeItems()">+3</button>
         <button id="reset-cart-btn" onclick="resetCart()">Reset Cart</button>
         <button onclick="redirectToHomePage()">Home Page</button>
-        <p>Amazon Shipping Calculator</p>
+    </div>
+    <div class="shipping-calculator">
+        <p class="shipping-calculator-title">Amazon Shipping Calculator</p>
         <p>Orders under $40 = +$10 shipping</p>
         <p>Orders over $40 = Free shipping</p>
-            <input type="text" class="order-amount-textbox" placeholder="Enter order amount">
-            <button class="calculate-shipping-btn" onclick="calculateShipping()" onkeydown="calculateOnKeydown()">Calculate</button>
-            <p class="final-shipping-cost"></p>
-    <di>
+        <input type="text" class="order-amount-textbox" placeholder="Enter order amount">
+        <button class="calculate-shipping-btn" onclick="calculateShipping()" onkeydown="calculateOnKeydown()">Calculate</button>
+        <p class="final-shipping-cost"></p>
+    </div>
+    <div>
         <input type="text" placeholder="Name" class="message-box">
         <button onclick="displayMessage()">Submit</button>
         <p class="message"></p>
-    </di>
+    </div>
         <di>
         <input type="text" placeholder="Name" class="text-box" onkeyup="displayText()">
         <p class="text"></p>

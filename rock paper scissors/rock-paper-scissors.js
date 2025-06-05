@@ -5,6 +5,7 @@ let declaration = '';
 let playerScore = 0;
 let computerScore = 0;
 
+//converts game history, a JSON string, to a Js object so it can be saved in the playerRecord variable.
 let playerRecord = JSON.parse(localStorage.getItem('GameHistory')) ||  {wins: 0, losses: 0, draws: 0};
 
 document.onload = updateRecords();
@@ -116,12 +117,15 @@ function updateScore(result)
         playerScore++;}
     else if (result === 'loss'){
         computerScore++;}
+    //used string interpolation to display the integer scores on the webpage
     document.getElementById('player-scores').innerText = `${playerScore}`;
     document.getElementById('computer-scores').innerText = `${computerScore}`;
 }
 
 function updateRecords(result) {
+    //converts player records, a Js object, to a JSON string and sets game history as the JSON string
     localStorage.setItem('GameHistory', JSON.stringify(playerRecord));
+
     if( result === 'win'){
         playerRecord.wins += 1;
     }
@@ -159,7 +163,6 @@ function resetGame()
 {
     playerScore = 0;
     computerScore = 0;
-    //computerMove = move;
     localStorage.removeItem('GameHistory');
 }
 
