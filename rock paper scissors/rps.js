@@ -9,8 +9,6 @@ let computerScore = 0;
 let playerRecord = JSON.parse(localStorage.getItem('GameHistory')) ||  {wins: 0, losses: 0, draws: 0};
 
 document.onload = updateRecords();
-const title = document.getElementById('page-title');
-console.log(title);
 
 function generateComputerMove()
 {
@@ -28,7 +26,6 @@ function generateComputerMove()
     {
         computerMove = "scissors";
     }
-    console.log(computerMove);
     return computerMove;   
 }
 
@@ -78,7 +75,6 @@ function updateScore(result)
     //used string interpolation to display the integer scores on the webpage
     document.getElementById('player-scores').innerText = `${playerScore}`;
     document.getElementById('computer-scores').innerText = `${computerScore}`;
-    console.log(document.getElementById("rock-button"));
 }
 
 function updateRecords(result) {
