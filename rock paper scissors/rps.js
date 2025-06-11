@@ -29,75 +29,33 @@ function generateComputerMove()
         computerMove = "scissors";
     }
     console.log(computerMove);
-    return computerMove;    
+    return computerMove;   
 }
 
 function playerMove(move)
 {   
     generateComputerMove();
 
-    if(computerMove === 'rock' && move === 'rock')
+    if((computerMove === 'rock' && move === 'rock') || (computerMove === 'paper' && move === 'paper') || (computerMove === 'scissors' && move === 'scissors'))
     {
         updateScore('tie')
         declaration = `It's a tie`;
         alert(`You played ${move} and the computer played ${computerMove}. ${declaration}`);
         updateRecords('tie'); 
     }
-    else if(computerMove === 'rock' && move === 'paper')
+    else if((computerMove === 'rock' && move === 'paper') || (computerMove === 'paper' && move === 'scissors') || (computerMove === 'scissors' && move === 'rock'))
     {
         updateScore('win')
         declaration = 'You win';
         alert(`You played ${move} and the computer played ${computerMove}. ${declaration}`);
         updateRecords('win');
     }
-    else if(computerMove === 'rock' && move === 'scissors')
+    else if((computerMove === 'rock' && move === 'scissors') || (computerMove === 'paper' && move === 'rock') || (computerMove === 'scissors' && move === 'paper'))
     {
         updateScore('loss')
         declaration = 'You lose!';
         alert(`You played ${move} and the computer played ${computerMove}. ${declaration}`);
         updateRecords('loss');
-    }
-    else if(computerMove === 'paper' && move === 'rock')
-    {
-        updateScore('loss');
-        declaration = 'You lose!'
-        alert(`You played ${move} and the computer played ${computerMove}. ${declaration}`); 
-        updateRecords('loss');
-    }
-    else if(computerMove === 'paper' && move === 'paper')
-    {
-        updateScore('tie')
-        declaration = `It's a tie`;
-        alert(`You played ${move} and the computer played ${computerMove}. ${declaration}`);
-        updateRecords('tie');
-    }
-    else if(computerMove === 'paper' && move === 'scissors')
-    {
-        updateScore('win')
-        declaration = 'You win';
-        alert(`You played ${move} and the computer played ${computerMove}. ${declaration}`);
-        updateRecords('win');
-    }
-    else if(computerMove === 'scissors' && move === 'rock')
-    {
-        updateScore('win');
-        declaration = 'You win!';
-        alert(`You played ${move} and the computer played ${computerMove}. ${declaration}`);
-        updateRecords('win'); 
-    }
-    else if(computerMove === 'scissors' && move === 'paper')
-    {
-        updateScore('loss')
-        declaration = 'You lose!';
-        alert(`You played ${move} and the computer played ${computerMove}. ${declaration}`);
-        updateRecords('loss');
-    }
-    else if(computerMove === 'scissors' && move === 'scissors')
-    {
-        updateScore('tie')
-        declaration = `It's a tie!`;
-        alert(`You played ${move} and the computer played ${computerMove}. ${declaration}`);
-        updateRecords('tie');
     }
     console.log(result);
     declareWinner();
@@ -120,6 +78,7 @@ function updateScore(result)
     //used string interpolation to display the integer scores on the webpage
     document.getElementById('player-scores').innerText = `${playerScore}`;
     document.getElementById('computer-scores').innerText = `${computerScore}`;
+    console.log(document.getElementById("rock-button"));
 }
 
 function updateRecords(result) {
@@ -165,4 +124,3 @@ function resetGame()
     computerScore = 0;
     localStorage.removeItem('GameHistory');
 }
-
