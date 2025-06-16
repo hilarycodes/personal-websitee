@@ -4,6 +4,8 @@ let move = '';
 let declaration = '';
 let playerScore = 0;
 let computerScore = 0;
+let numberForPlayer = 0;
+let playerMoves = '';
 
 //converts game history, a JSON string, to a Js object so it can be saved in the playerRecord variable.
 let playerRecord = JSON.parse(localStorage.getItem('GameHistory')) ||  {wins: 0, losses: 0, draws: 0};
@@ -12,55 +14,134 @@ document.onload = updateRecords();
 
 function generateComputerMove()
 {
-    let randomNumberForComputerMove = Math.random();
+    //generates a random number between 1 and 9
+    let numberForComputerMove = getRandomInt(1, 9);
     
-    if(randomNumberForComputerMove >= 0 && randomNumberForComputerMove < (1/3))
+    if(numberForComputerMove >= 1 && numberForComputerMove <= 3)
     {
         computerMove = "rock";
     }
-    else if(randomNumberForComputerMove >= (1/3) && randomNumberForComputerMove < (2/3))
+    else if(numberForComputerMove >= 4 && numberForComputerMove <= 6)
     {
         computerMove = "paper";
     }
-    else if(randomNumberForComputerMove >= (2/3) && randomNumberForComputerMove <= 1)
+    else if(numberForComputerMove >= 7 && numberForComputerMove <= 9)
     {
         computerMove = "scissors";
     }
     return computerMove;   
 }
 
+function getRandomInt(min, max) {
+  return Math.trunc((Math.random() * (max - min)) + min);
+}
+
 function playerMove(move)
 {   
+    const playerGameMoves = document.getElementById('player-game-moves');
+    const computerGameMoves = document.getElementById('computer-game-moves');
     generateComputerMove();
 
-    if((computerMove === 'rock' && move === 'rock') || (computerMove === 'paper' && move === 'paper') || (computerMove === 'scissors' && move === 'scissors'))
+    switch (move) {
+        case "rock":
+            numberForPlayer = getRandomInt(1, 3);
+            playerMoves = "rock"
+            break;
+        case "paper":
+            numberForPlayer = getRandomInt(4, 6);
+            playerMoves = "paper"
+        case "scissors":
+            numberForPlayer = Math.random(7, 9);
+            playerMoves = "scissors"
+            break;
+    }
+
+    if(playerMoves === computerMove)
     {
-        updateScore('tie')
-        declaration = `It's a tie`;
-        alert(`You played ${move} and the computer played ${computerMove}. ${declaration}`);
+        updateScore('tie');
+        declaration = `It's a tie!`;
+        // playerGameMoves.innerText = `You ${document.getElementById("rock-button").innerText}`;
+        // computerGameMoves.innerText = `Computer ${document.getElementById("rock-button").innerText}`;
         updateRecords('tie'); 
     }
-    else if((computerMove === 'rock' && move === 'paper') || (computerMove === 'paper' && move === 'scissors') || (computerMove === 'scissors' && move === 'rock'))
-    {
-        updateScore('win')
-        declaration = 'You win';
-        alert(`You played ${move} and the computer played ${computerMove}. ${declaration}`);
-        updateRecords('win');
-    }
-    else if((computerMove === 'rock' && move === 'scissors') || (computerMove === 'paper' && move === 'rock') || (computerMove === 'scissors' && move === 'paper'))
-    {
-        updateScore('loss')
-        declaration = 'You lose!';
-        alert(`You played ${move} and the computer played ${computerMove}. ${declaration}`);
-        updateRecords('loss');
-    }
+    else if(playerMoves )
+    // if(computerMove === 'rock' && move === 'rock')
+    // {
+    //     updateScore('tie')
+    //     declaration = `It's a tie!`;
+    //     playerGameMoves.innerText = `You ${document.getElementById("rock-button").innerText}`;
+    //     computerGameMoves.innerText = `Computer ${document.getElementById("rock-button").innerText}`;
+    //     updateRecords('tie'); 
+    // }
+    // else if(computerMove === 'rock' && move === 'paper')
+    // {
+    //     updateScore('win')
+    //     declaration = 'You win!';
+    //     playerGameMoves.innerText = `You ${document.getElementById("paper-button").innerText}`;
+    //     computerGameMoves.innerText = `Computer ${document.getElementById("rock-button").innerText}`;
+    //     updateRecords('win');
+    // }
+    // else if(computerMove === 'rock' && move === 'scissors')
+    // {
+    //     updateScore('loss')
+    //     declaration = 'You lose!';
+    //     playerGameMoves.innerText = `You ${document.getElementById("scissors-button").innerText}`;
+    //     computerGameMoves.innerText = `Computer ${document.getElementById("rock-button").innerText}`;
+    //     updateRecords('loss');
+    // }
+    // else if(computerMove === 'paper' && move === 'rock')
+    // {
+    //     updateScore('loss');
+    //     declaration = 'You lose!'
+    //     playerGameMoves.innerText = `You ${document.getElementById("rock-button").innerText}`;
+    //     computerGameMoves.innerText = `Computer ${document.getElementById("paper-button").innerText}`;
+    //     updateRecords('loss');
+    // }
+    // else if(computerMove === 'paper' && move === 'paper')
+    // {
+    //     updateScore('tie')
+    //     declaration = `It's a tie!`;
+    //     playerGameMoves.innerText = `You ${document.getElementById("paper-button").innerText}`;
+    //     computerGameMoves.innerText = `Computer ${document.getElementById("paper-button").innerText}`;
+    //     updateRecords('tie');
+    // }
+    // else if(computerMove === 'paper' && move === 'scissors')
+    // {
+    //     updateScore('win')
+    //     declaration = 'You win!';
+    //     playerGameMoves.innerText = `You ${document.getElementById("scissors-button").innerText}`;
+    //     computerGameMoves.innerText = `Computer ${document.getElementById("paper-button").innerText}`;
+    //     updateRecords('win');
+    // }
+    // else if(computerMove === 'scissors' && move === 'rock')
+    // {
+    //     updateScore('win');
+    //     declaration = 'You win!';
+    //     playerGameMoves.innerText = `You ${document.getElementById("rock-button").innerText}`;
+    //     computerGameMoves.innerText = `Computer ${document.getElementById("scissors-button").innerText}`;
+    //     updateRecords('win'); 
+    // }
+    // else if(computerMove === 'scissors' && move === 'paper')
+    // {
+    //     updateScore('loss')
+    //     declaration = 'You lose!';
+    //     playerGameMoves.innerText = `You ${document.getElementById("paper-button").innerText}`;
+    //     computerGameMoves.innerText = `Computer ${document.getElementById("scissors-button").innerText}`;
+    //     updateRecords('loss');
+    // }
+    // else if(computerMove === 'scissors' && move === 'scissors')
+    // {
+    //     updateScore('tie')
+    //     declaration = `It's a tie!`;
+    //     playerGameMoves.innerText = `You ${document.getElementById("scissors-button").innerText}`;
+    //     computerGameMoves.innerText = `Computer ${document.getElementById("scissors-button").innerText}`;
+    //     updateRecords('tie');
+    // }
     console.log(result);
     declareWinner();
 
     const gameResults = document.getElementById('game-results');
     gameResults.innerText = declaration;
-    const gameMoves = document.getElementById('game-moves');
-    gameMoves.innerText = `You = ${move} : Computer = ${computerMove}`;
 }
 
 function updateScore(result) 

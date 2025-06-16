@@ -22,16 +22,23 @@
         </div>
         <h2 id="scores-heading">Scores</h2>
         <hr>
-        <div>
-            <h3 id="player-score-header">Player Score</h3><h3 id="Computer-score-header">Computer Score</h3>
+        <div id="headers">
+            <span id="player-score-header" class="score-headers">Player Score</span>
+            <span id="computer-score-header" class="score-headers">Computer Score</span>
         </div>
-        <div>
-            <p id="player-scores"></p><p id="computer-scores"></p>
+        <div id="scores-group">
+            <span id="player-scores" class="scores"></span>
+            <span id="computer-scores" class="scores"></span>
         </div>
-        <div>
-            <p id="game-results"></p>
-            <p id="game-moves"></p>
-            <p id="game-records"></p>
+        <div id="game-results">
+            <p></p>
+        </div>
+        <div id="game-moves">
+            <p id="player-game-moves"></p>
+            <p id="computer-game-moves"></p>
+        </div>
+        <div id="game-records">
+            <p></p>
         </div>
         <div>
             <button class="move-button" id="reset-button" onclick="resetGame()">Reset</button>
