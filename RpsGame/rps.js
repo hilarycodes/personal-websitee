@@ -14,10 +14,10 @@ let playerRecord = JSON.parse(localStorage.getItem('GameHistory')) ||  {wins: 0,
 
 document.onload = updateRecords();
 
-function generateComputerMove(min, max) {
-    randomNumber = Math.trunc(Math.round(Math.random * (max - min)));
+function generateComputerMove() {
+    randomNumber = Math.floor(Math.random() * 3);
     switch (randomNumber) {
-        case 0 : computerMove = "rock"
+        case 0 : computerMove = "rock" 
             break;
         case 1 : computerMove = "paper"
             break;
@@ -27,7 +27,7 @@ function generateComputerMove(min, max) {
 }
 
 function playerMove(playerChoice) {
-    generateComputerMove(1, 3);
+    generateComputerMove();
     const result = getResult(playerChoice, computerMove);
 
     updateScore(result);
