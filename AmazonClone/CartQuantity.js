@@ -46,9 +46,9 @@ function calculateShipping(){
 // });
 
 function calculateOnKeydown(event){
-    if(event.key === 'Enter'){
+    if(event.key === "Enter"){
         calculateShipping();
-    }
+    } 
 }
 
 function displayMessage(){

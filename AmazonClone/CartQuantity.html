@@ -21,8 +21,8 @@
         <p class="shipping-calculator-title">Amazon Shipping Calculator</p>
         <p>Orders under $40 = +$10 shipping</p>
         <p>Orders over $40 = Free shipping</p>
-        <input type="text" class="order-amount-textbox" placeholder="Enter order amount">
-        <button class="calculate-shipping-btn" onclick="calculateShipping()" onkeydown="calculateOnKeydown()">Calculate</button>
+        <input type="text" class="order-amount-textbox" id="cost-input" placeholder="Enter order amount" onkeydown="calculateOnKeydown(event)">
+        <button class="calculate-shipping-btn" onclick="calculateShipping()">Calculate</button>
         <p class="final-shipping-cost"></p>
     </div>
     <div>
