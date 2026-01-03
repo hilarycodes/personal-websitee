@@ -1,122 +1,105 @@
-#game-title
-{
-    font-family: system-ui, 'Segoe UI', 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-weight: 500;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: antiquewhite;
+* {
+  box-sizing: border-box;
 }
 
-body
-{
-    background-color: rgb(61, 61, 61);
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(circle at top, #444, #1f1f1f);
+  font-family: system-ui, "Segoe UI", sans-serif;
+  color: antiquewhite;
 }
 
-.move-button
-{
-    display:flex;
-    justify-content: center;
-    align-items:center;
-    width: 150px;
-    height: 150px;
-    border: 1px solid rgb(26, 164, 19);
-    border-radius: 100%;
-    font-size: 1.2rem;
-    font-weight: 450;
-    margin-bottom: 20px;
-    margin-right: 40px;
-    margin-left: 40px;
-    color: rgb(26, 164, 19);
-    background-color: rgb(61, 61, 61);
-    font-family: system-ui, 'Segoe UI';
-    text-decoration: none;
-    font-weight: 900;
-    transition: all 0.3s ease;
+.game-card {
+  background: #2a2a2a;
+  padding: 2.5rem;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 520px;
+  text-align: center;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+  margin-right: 20px;
 }
 
-.move-button:hover
-{
-    background-color: rgb(26, 164, 19);
-    color: antiquewhite;
+#game-title {
+  margin-bottom: 2rem;
+  font-weight: 600;
 }
 
-#game-buttons
-{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
+#game-buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 2rem;
 }
 
-#scores-heading
-{
-    font-family: system-ui, 'Segoe UI', 'Open Sans', 'Helvetica Neue', sans-serif;
-    color: antiquewhite;
-    flex-direction: column;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.move-button {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  border: 2px solid #1aa413;
+  background: transparent;
+  color: #1aa413;
+  font-size: 2.5rem;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease;
 }
 
-#game-logo
-{
-    display: inline-flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 110px;
-    width: 120px;
-    border-radius: 10%;
+.move-button:hover {
+  background: #1aa413;
+  color: antiquewhite;
+  transform: translateY(-5px);
 }
 
-#game-moves{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between; 
-    font-size: 40px;
-}
-#game-results{
-    margin-left: 600px;
-    margin-right: 550px;
-    font-size: 30px;
+#game-results {
+  font-size: 1.6rem;
+  margin: 1.5rem 0;
+  font-weight: 600;
 }
 
-#game-results, #game-moves{
-    color: antiquewhite;
-    display: inline-flex;
-    flex-direction: row;
-    justify-content: center;
-    font-family: system-ui, 'Segoe UI', 'Open Sans', 'Helvetica Neue', sans-serif;
+#game-moves {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.1rem;
+  opacity: 0.9;
 }
 
-.scores{
-    color: antiquewhite;
-    font-family: 'Segoe UI';
-    font-size: 2.5rem;
-    font-weight: 900;
+.scores-section {
+  margin-top: 2rem;
 }
 
-.score-headers{
-    color: antiquewhite;
-    font-family: system-ui, 'Segoe UI';
-    font-weight: 600;
-    font-size: 1.2rem;
+.scores {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 1rem;
 }
 
-#headers{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-direction: row;
-    margin-left: 0;
+.score-headers {
+  display: block;
+  font-size: 0.9rem;
+  opacity: 0.8;
 }
 
-#scores-group{
-    align-items: center;
-    justify-content: space-between;
-    display: flex;
-    flex-direction: row;
+.score-number {
+  font-size: 2.4rem;
+  font-weight: 800;
+}
+
+#reset-button {
+  margin-top: 2rem;
+  padding: 0.8rem 2rem;
+  border-radius: 30px;
+  border: none;
+  background: #1aa413;
+  color: antiquewhite;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+#reset-button:hover {
+  background: #138c0f;
 }

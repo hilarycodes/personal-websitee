@@ -13,7 +13,6 @@ let numeral = 0;
 let playerRecord = JSON.parse(localStorage.getItem('GameHistory')) ||  {wins: 0, losses: 0, draws: 0};
 
 document.onload = updateRecords();
-
 function generateComputerMove() {
     randomNumber = Math.floor(Math.random() * 3);
     switch (randomNumber) {
@@ -31,13 +30,24 @@ function playerMove(playerChoice) {
     const result = getResult(playerChoice, computerMove);
 
     updateScore(result);
-    updateRecords(result);
+    //updateRecords(result);
 
     const declaration = getDeclaration(result);
     // alert(`You played ${playerChoice} and the computer played ${computerMove}. ${declaration}`);
+    let emoji = "";
+    let computerEmoji = "";
+    const emojis = {
+        rock: "✊🏾",
+        paper: "🖐🏾",
+        scissors: "✌🏾"  
+    };
+
+    emoji = emojis[playerChoice.toLowerCase()];
+    computerEmoji = emojis[computerMove.toLowerCase()];
 
     document.getElementById('game-results').innerText = declaration;
-    document.getElementById('game-moves').innerText = `You = ${playerChoice} : Computer = ${computerMove}`;
+    document.getElementById('player-game-moves').innerText = emoji;
+    document.getElementById('computer-game-moves').innerText = computerEmoji;
 
     declareWinner();
 }

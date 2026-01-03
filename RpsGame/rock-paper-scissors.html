@@ -1,47 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content= "width=device-width, initial-scale=1.0">
-        <meta name="author" content="Modilim Chukwubuikem">
-        <title id="page-title">Rock Paper Scissors Game</title>
-        <link rel="stylesheet" href="rock-paper-scissors.css">
-        <script src="rps.js" defer></script>
-    </head>
-    <body>
-        <!-- <div>
-            <img src="images/qps.jpg" alt="Quartz Parchment Shears" id="game-logo" onclick="redirectToVideo()">
-        </div> -->
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rock Paper Scissors</title>
+  <link rel="stylesheet" href="rock-paper-scissors.css" />
+</head>
+<body>
+  <main class="game-card">
+    <h1 id="game-title">Quartz Parchment Shears</h1>
+
+    <div id="game-buttons">
+      <button class="move-button" onclick="playerMove('rock')">✊🏾</button>
+      <button class="move-button" onclick="playerMove('paper')">🖐🏾</button>
+      <button class="move-button" onclick="playerMove('scissors')">✌🏾</button>
+    </div>
+
+    <div id="game-results"></div>
+
+    <!-- <div id="game-moves">
+      <p id="player-game-moves"></p>
+      <p id="computer-game-moves"></p>
+    </div> -->
+
+    <section class="scores-section">
+      <h2>Scores</h2>
+      <div class="scores">
         <div>
-            <h1 id="game-title">Quartz Parchment Shears</h1>
-        </div>
-        <div id="game-buttons">
-            <button class="move-button" id="rock-button" name="rock" onclick="playerMove('rock') , updateScore()">✊🏾</button>
-            <button class="move-button" id="paper-button" name="paper" onclick="playerMove('paper')">🖐🏾</button>
-            <button class="move-button" id="scissors-button" name="scissors" onclick="playerMove('scissors')">✌🏾</button>
-        </div>
-        <h2 id="scores-heading">Scores</h2>
-        <hr>
-        <div id="headers">
-            <span id="player-score-header" class="score-headers">Player Score</span>
-            <span id="computer-score-header" class="score-headers">Computer Score</span>
-        </div>
-        <div id="scores-group">
-            <span id="player-scores" class="scores"></span>
-            <span id="computer-scores" class="scores"></span>
-        </div>
-        <div id="game-results">
-            <p></p>
-        </div>
-        <div id="game-moves">
-            <p id="player-game-moves"></p>
-            <p id="computer-game-moves"></p>
-        </div>
-        <div id="game-records">
-            <p></p>
+          <span class="score-headers">Player</span>
+          <span id="player-scores" class="score-number">0</span>
         </div>
         <div>
-            <button class="move-button" id="reset-button" onclick="resetGame()">Reset</button>
+          <span class="score-headers">Computer</span>
+          <span id="computer-scores" class="score-number">0</span>
         </div>
-    </body>
+      </div>
+    </section>
+
+    <button id="reset-button" onclick="resetGame()">Reset Game</button>
+  </main>
+  <div  class="game-card" id ="score-card">
+    <section>
+        <h2>Moves</h2>
+        <div class="scores">
+            <div>
+                <span class="score-headers">Player</span>
+                <span id="player-game-moves"></span>
+            </div>
+            <div>
+                <span class="score-headers">Computer</span>
+                <span id="computer-game-moves"></span>
+            </div>
+        </div>
+    </section>
+  </div>
+<script src="rps.js" defer></script>
+</body>
 </html>
