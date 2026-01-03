@@ -121,4 +121,5 @@ function resetGame()
     playerScore = 0;
     computerScore = 0;
     localStorage.removeItem('GameHistory');
+    document.getElementById('game-results').innerText = "Game has been reset...."
 }

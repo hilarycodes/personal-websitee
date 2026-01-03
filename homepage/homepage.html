@@ -3,41 +3,62 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="author" content="Modilim Chukwubuikem Hilary" />
+
+    <!-- SEO / Social -->
     <meta
-      name="og:description"
-      content="Welcome to my personal website. I'm a passionate Computer Science student and aspiring AI expert building tools to solve real-world problems."
+      property="og:description"
+      content="Computer Science student and aspiring AI expert building tools to solve real-world problems."
     />
-    <title>Personal Website</title>
+
+    <title>Hilary | Personal Website</title>
+
     <link rel="stylesheet" href="homestyles.css" />
     <script src="homepage.js" defer></script>
   </head>
+
   <body>
-    <div id="profile-picture">
-      <img src="IMG-20240314-WA0421.jpg" alt="Profile Picture" />
-    </div>
-    <div class="column">
-      <span id="header">Chukwubuikem Hilary Modilim,</span>
-      <span id="Age" class="text">18,</span>
-      <span id="sub-header" class="text">Abuja, Nigeria.</span>
-      <span id="description" class="text"
-        >Computer Science Stuent/Front-end Web developer</span
-      >
-      <p class="text">
-        I'm a passionate Computer Science student and aspiring AI expert
-        <br /><span id="about-me-line-two"
-          >excited about using AI tools to solve real-world problems</span
-        >
-      </p>
-    </div>
-    <div class="column">
-      <a
-        class="link"
-        id="instagram-button"
-        href="https://instagram.com/thisishilary_"
-        >Instagram</a
-      >
-      <a class="link" href="https://github.com/hilarycodes">Github</a>
-    </div>
+    <main class="container">
+      <section class="profile">
+        <img
+          src="profile.jpg"
+          alt="Portrait of Hilary"
+          class="profile-image"
+        />
+      </section>
+
+      <section class="intro">
+        <h1 class="name">Hilary</h1>
+        <p class="meta">18 · Computer Science Student</p>
+
+        <p class="role">
+          Front-end Web Developer
+        </p>
+
+        <p class="about">
+          I'm a passionate Computer Science student and aspiring AI expert,
+          excited about using AI tools to solve real-world problems.
+        </p>
+
+        <div class="links">
+          <a
+            href="https://instagram.com/thisishilary_"
+            class="link"
+            target="_blank"
+            rel="noopener"
+          >
+            Instagram
+          </a>
+
+          <a
+            href="https://github.com/hilarycodes"
+            class="link"
+            target="_blank"
+            rel="noopener"
+          >
+            GitHub
+          </a>
+        </div>
+      </section>
+    </main>
   </body>
 </html>
