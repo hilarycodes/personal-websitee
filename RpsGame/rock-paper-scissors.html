@@ -5,51 +5,62 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Rock Paper Scissors</title>
   <link rel="stylesheet" href="rock-paper-scissors.css" />
+  <script src="rps.js" defer></script>
 </head>
 <body>
-  <main class="game-card">
-    <h1 id="game-title">Quartz Parchment Shears</h1>
+    <main class="game-card" id="card-1">
+        
+        <h1 id="game-title">Quartz Parchment Shears</h1>
 
-    <div id="game-buttons">
-      <button class="move-button" onclick="playerMove('rock')">✊🏾</button>
-      <button class="move-button" onclick="playerMove('paper')">🖐🏾</button>
-      <button class="move-button" onclick="playerMove('scissors')">✌🏾</button>
-    </div>
-
-    <!--game messages are placed here-->
-    <p id="game-results"></p>
-
-    <section class="scores-section">
-      <h2>Scores</h2>
-      <div class="scores">
-        <div>
-          <span class="score-headers">Player</span>
-          <span id="player-scores" class="score-number">0</span>
+        <div id="game-buttons">
+            <button class="move-button" onclick="playerMove('rock')">✊🏾</button>
+            <button class="move-button" onclick="playerMove('paper')">🖐🏾</button>
+            <button class="move-button" onclick="playerMove('scissors')">✌🏾</button>
         </div>
-        <div>
-          <span class="score-headers">Computer</span>
-          <span id="computer-scores" class="score-number">0</span>
-        </div>
-      </div>
-    </section>
 
-    <button id="reset-button" onclick="resetGame()">Reset Game</button>
-  </main>
-  <div  class="game-card" id ="score-card">
-    <section>
-        <h2>Moves</h2>
-        <div class="scores">
-            <div>
-                <span class="score-headers">Player</span>
-                <span id="player-game-moves"></span>
+        <!--game messages are placed here-->
+        <p id="game-results"></p>
+
+        <section class="scores-section">
+            <h2>Scores</h2>
+            <div class="scores">
+                <div>
+                    <span class="score-headers">You</span>
+                    <span id="player-scores" class="score-number">0</span>
+                </div>
+                <div>
+                    <span class="score-headers">Computer</span>
+                    <span id="computer-scores" class="score-number">0</span>
+                </div>
             </div>
-            <div>
-                <span class="score-headers">Computer</span>
-                <span id="computer-game-moves"></span>
-            </div>
+        </section>
+
+        <button id="reset-button" onclick="resetGame()">Reset Game</button>
+    </main>
+
+    <main>
+        <div id ="card-2" class="game-card">
+            <section>
+                <h2>Moves</h2>
+                <div class="scores">
+                    <div>
+                        <span class="score-headers">You</span>
+                        <span id="player-game-moves"></span>
+                    </div>
+                    <div>
+                        <span class="score-headers">Computer</span>
+                        <span id="computer-game-moves"></span>
+                    </div>
+                </div>
+            </section>
         </div>
-    </section>
-  </div>
-<script src="rps.js" defer></script>
+        <div class="game-card" id="card-3">
+            <section>
+                <h2>Records</h2>
+                <p id="game-records"></p>
+            </section>
+            <!-- <button id="delete-records-button" onclick="deleteRecords()">Delete Records</button> -->
+        </div>
+    </main>
 </body>
 </html>

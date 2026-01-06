@@ -24,6 +24,23 @@ body {
   margin-right: 20px;
 }
 
+#card-1{
+    margin-left: -50px;
+    margin-right: 0px;
+    width: 100%;
+}
+#card-2{
+    margin-left: 20px;
+    width: 340px;
+}
+#card-3{
+  margin: 20px;
+}
+#dark-light-button{
+    margin-left: 20px;
+    width: 340px;   
+}
+
 #game-title {
   margin-bottom: 2rem;
   font-weight: 600;

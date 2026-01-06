@@ -30,7 +30,7 @@ function playerMove(playerChoice) {
     const result = getResult(playerChoice, computerMove);
 
     updateScore(result);
-    //updateRecords(result);
+    updateRecords(result);
 
     const declaration = getDeclaration(result);
     // alert(`You played ${playerChoice} and the computer played ${computerMove}. ${declaration}`);
@@ -100,6 +100,14 @@ function updateRecords(result) {
     console.log(playerRecord);
 }
 
+// update this...
+function deleteRecords(){
+    localStorage.removeItem("GameHistory");
+    playerRecord.wins = 0; 
+    playerRecord.losses = 0; 
+    playerRecord.draws = 0;
+}
+
 function declareWinner() {
     if (playerScore === 5 || computerScore === 5) {
         const message = playerScore === 5 
@@ -120,6 +128,8 @@ function resetGame()
 {
     playerScore = 0;
     computerScore = 0;
+    document.getElementById('player-scores').innerText = `${playerScore}`;
+    document.getElementById('computer-scores').innerText = `${computerScore}`;
     localStorage.removeItem('GameHistory');
     document.getElementById('game-results').innerText = "Game has been reset...."
 }
