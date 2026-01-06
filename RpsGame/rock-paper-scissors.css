@@ -32,9 +32,13 @@ body {
 #card-2{
     margin-left: 20px;
     width: 340px;
+    height: 250px;
 }
 #card-3{
   margin: 20px;
+  width: 340px;
+  margin-left: 20px;
+  height: 250px;
 }
 #dark-light-button{
     margin-left: 20px;
